@@ -36,10 +36,11 @@ int BFSNeedStep(Node start)
     ++ step;
 }
 
+// 纯暴力搜索
 int BFSNoNeedStep(Node start)
 {
     deque<Node> q; // 核心数据结构
-    set<Node> vistied; // 避免走回头路
+    set<Node> visited; // 避免走回头路
 
     q.push_back(start);
     visited.insert(start);
@@ -48,14 +49,11 @@ int BFSNoNeedStep(Node start)
         Node cur = q.front();
         q.pop_front();
         
-        if (/*check end condition*/) {
-            /*do some thing*/
-        }
+        /*do some thing*/
         
         // 将 cur 的相邻节点加入队列
         for(Node x: cur.adj())
-            if(x not in visited)
-            {
+            if(x not in visited) {
                 q.push_back(x);
                 visited.insert(x);
             }
